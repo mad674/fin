@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinGPT Financial Assistant</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigation -->
+  <header class="bg-white shadow-md fixed w-full z-10">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#home" class="text-2xl font-bold text-blue-700">FinGPT</a>
+      <nav class="space-x-6">
+        <a href="#features" class="hover:text-blue-700">Features</a>
+        <a href="#about" class="hover:text-blue-700">About</a>
+        <a href="#screenshots" class="hover:text-blue-700">Screenshots</a>
+        <a href="#faq" class="hover:text-blue-700">FAQ</a>
+        <a href="#download" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-24 pb-16 bg-white">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-700 mb-4">AI-Powered Financial Insights On-the-Go</h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-8">Transform lengthy financial documents into concise summaries, extract key metrics, and get instant answers—all from your Android device.</p>
+      <a href="https://github.com/mad674/finqa/releases/download/app/fin_gpt.apk" id="download" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">Download APK (55 MB)</a>
+      <div class="mt-10 flex justify-center space-x-6">
+        <img src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png" alt="Firebase" class="h-10 opacity-70 hover:opacity-100 transition" title="Firebase">
+        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" class="h-10 opacity-70 hover:opacity-100 transition" title="Hugging Face">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="h-10 opacity-70 hover:opacity-100 transition" title="GitHub">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="font-semibold text-xl text-blue-600 mb-2">Document Summarization</h3>
+          <p>Instantly condense lengthy reports into clear, actionable summaries.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="font-semibold text-xl text-blue-600 mb-2">Data Extraction</h3>
+          <p>Automatically pull out tables, numbers, and KPIs from any financial document.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="font-semibold text-xl text-blue-600 mb-2">Interactive Q&A</h3>
+          <p>Ask any finance question and get precise, context-aware answers instantly.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="font-semibold text-xl text-blue-600 mb-2">Offline Caching</h3>
+          <p>Downloaded models store locally, so you can work without internet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">About FinGPT</h2>
+        <p class="mb-4">FinGPT is a cutting-edge mobile assistant designed to streamline financial analysis. Built on robust AI models, it empowers users to:</p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Summarize long-form documents in seconds</li>
+          <li>Extract and visualize key financial metrics</li>
+          <li>Answer complex finance queries with real-time insights</li>
+          <li>Ensure data privacy with on-device model caching</li>
+        </ul>
+      </div>
+      <div>
+        <img src="img.png" alt="App screenshot" class="rounded-lg shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section id="screenshots" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">App Screenshots</h2>
+      <!-- Placeholder for carousel -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="img2.jpg" alt="Screen 1" class="rounded-lg shadow-md">
+        <img src="img3.jpg" alt="Screen 2" class="rounded-lg shadow-md">
+        <img src="img4.jpg" alt="Screen 3" class="rounded-lg shadow-md">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6 max-w-2xl mx-auto">
+        <div>
+          <h3 class="font-semibold text-xl">Is my data secure?</h3>
+          <p>Yes, FinGPT uses on-device caching and we does't store any data on our servers.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl">Which document types are supported?</h3>
+          <p>You can upload PDFs, Word docs, text files, and images (JPG/PNG).</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl">How does FinGPT work?</h3>
+          <p>It uses state-of-the-art AI models to summarize, extract data, and answer questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p class="mb-4">© 2025 FinGPT · <a href="https://github.com/mad674/finqa" class="text-blue-600 hover:underline">View on GitHub</a></p>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-blue-700">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-700">Terms of Service</a>
+        <a href="#" class="hover:text-blue-700">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
