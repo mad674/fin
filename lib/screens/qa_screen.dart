@@ -52,19 +52,42 @@ class QAScreen extends HookWidget {
 
       isLoading.value = true;
       try {
-        final resp = await http.post(
-          (_questionMode.value == QuestionMode.fromExistingData) ? questionUri : questionUri2,
-          headers: {'Content-Type': 'application/json'},
-          body: json.encode({'question': q}),
-        );
-        if (resp.statusCode == 200) {
-          final newResponse = json.decode(resp.body) as Map<String, dynamic>;
-          // Store the response in the cache
-          cachedResponses[q] = newResponse;
-          response.value = newResponse;
+        if (_questionMode.value == QuestionMode.fromFile) {
+          if (selectedFile.value == null) {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(const SnackBar(content: Text('Please select a PDF file.')));
+            isLoading.value = false;
+            return;
+          }
+          final request = http.MultipartRequest('POST', questionUri2)
+            ..fields['question'] = q
+            ..files.add(await http.MultipartFile.fromPath('pdf', selectedFile.value!.path));
+          final streamedResponse = await request.send();
+          final resp = await http.Response.fromStream(streamedResponse);
+          if (resp.statusCode == 200) {
+            final newResponse = json.decode(resp.body) as Map<String, dynamic>;
+            // Store the response in the cache
+            cachedResponses[q] = newResponse;
+            response.value = newResponse;
+          } else {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text('Error: ${resp.statusCode}')));
+          }
         } else {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text('Error: ${resp.statusCode}')));
+          final resp = await http.post(
+            questionUri,
+            headers: {'Content-Type': 'application/json'},
+            body: json.encode({'question': q}),
+          );
+          if (resp.statusCode == 200) {
+            final newResponse = json.decode(resp.body) as Map<String, dynamic>;
+            // Store the response in the cache
+            cachedResponses[q] = newResponse;
+            response.value = newResponse;
+          } else {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text('Error: ${resp.statusCode}')));
+          }
         }
       } catch (e) {
         ScaffoldMessenger.of(context)
