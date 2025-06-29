@@ -128,16 +128,16 @@ class QAScreen extends HookWidget {
                 },
               ),
             ),
-            // ListTile(
-            //   title: const Text("Upload PDF"),
-            //   leading: Radio<QuestionMode>(
-            //     value: QuestionMode.fromFile,
-            //     groupValue: _questionMode.value,
-            //     onChanged: (QuestionMode? value) {
-            //       _questionMode.value = value!;
-            //     },
-            //   ),
-            // ),
+            ListTile(
+              title: const Text("Upload PDF"),
+              leading: Radio<QuestionMode>(
+                value: QuestionMode.fromFile,
+                groupValue: _questionMode.value,
+                onChanged: (QuestionMode? value) {
+                  _questionMode.value = value!;
+                },
+              ),
+            ),
             // FilepickerUI
             if (_questionMode.value == QuestionMode.fromFile) ...[
               const SizedBox(height: 16),
